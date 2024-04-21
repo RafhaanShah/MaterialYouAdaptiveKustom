@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- You can comment all permissions out if you are not using wallpapers -->
+    <!--    <uses-permission android:name="android.permission.INTERNET" />-->
+    <!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--    <uses-permission android:name="android.permission.SET_WALLPAPER" />-->
+    <!--    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />-->
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/kustom_dashboard_title">
+
+        <!-- Content provider sending data to Kustom, DO NOT CHANGE AUTHORITY NAME! -->
+
+        <provider
+            android:name="org.kustom.api.Provider"
+            android:authorities="${applicationId}.kustom.provider"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider">
+            <intent-filter>
+                <!-- Comment this if you are not going to provide Wallpapers -->
+                <!-- <action android:name="org.kustom.provider.WALLPAPERS" /> -->
+                <!-- Comment this if you are not going to provide Widgets -->
+                <action android:name="org.kustom.provider.WIDGETS" />
+                <!-- Comment this if you are not going to provide Lockscreens -->
+                <!-- <action android:name="org.kustom.provider.LOCKSCREENS" /> -->
+                <!-- Comment this if you are not going to provide Komponents -->
+                <!-- <action android:name="org.kustom.provider.KOMPONENTS" /> -->
+                <!-- Comment this if you are not going to provide Watchfaces -->
+                <!-- <action android:name="org.kustom.provider.WATCHFACES" /> -->
+            </intent-filter>
+        </provider>
+        <!-- This is the DashBoardActivity remove this only if you know what you are doing -->
+        <activity
+            android:name="org.kustom.api.dashboard.DashboardActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <!-- To show up in the launcher -->
+                <!-- <category android:name="android.intent.category.LAUNCHER" />-->
+                <!-- Makes the app available in the launcher's wallpaper chooser -->
+                <!-- <action android:name="android.intent.action.SET_WALLPAPER" />-->
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
