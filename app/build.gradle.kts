@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId = "com.rafapps.materialyouadaptive"
-        versionCode = 1
-        versionName = "1"
+        versionCode = 2
+        versionName = "2"
 
         minSdk = 26
         targetSdk = 34
