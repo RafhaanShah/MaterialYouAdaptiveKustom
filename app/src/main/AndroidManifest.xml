@@ -38,7 +38,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <!-- To show up in the launcher -->
-                <!-- <category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.LAUNCHER" />
                 <!-- Makes the app available in the launcher's wallpaper chooser -->
                 <!-- <action android:name="android.intent.action.SET_WALLPAPER" />-->
             </intent-filter>
